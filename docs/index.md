@@ -28,7 +28,7 @@ His research interests include deep learning, representation learning, meta-lear
 
 <br>
 
-[:fontawesome-brands-x-twitter:](https://x.com/mapuna_inverse){:target="_blank" .md-button } [:fontawesome-brands-github:](https://github.com/anp-scp/){:target="_blank" .md-button } [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/anupam-sharma-7a6090140/){:target="_blank" .md-button } [:octicons-mail-16:](mailto:anupammrg@gmail.com){:target="_blank" .md-button } 
+[:fontawesome-brands-x-twitter:](https://x.com/mapuna_inverse){:target="_blank" .md-button .extra_space_in_phones } [:fontawesome-brands-github:](https://github.com/anp-scp/){:target="_blank" .md-button .extra_space_in_phones } [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/anupam-sharma-7a6090140/){:target="_blank" .md-button .extra_space_in_phones } [:octicons-mail-16:](mailto:anupammrg@gmail.com){:target="_blank" .md-button .extra_space_in_phones } 
 
 <br>
 </div>

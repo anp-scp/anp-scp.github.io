@@ -9,7 +9,7 @@ hide:
 
 * __Anupam Sharma__, & Krishna Miyapuram. Evaluating Fast Adaptability of Neural Networks for Brain-Computer Interface. In 2024 International Joint Conference on Neural Networks (ĲCNN 2024) (pp. 7.38)
     
-    [Arxiv](https://arxiv.org/abs/2404.15350){:target="_blank" .pub_button .pub_button_clickable} [Code](https://github.com/anp-scp/fast_bci){:target="_blank" .pub_button .pub_button_clickable} <span class="pub_button" markdown>BIB (1)</span> <span class="pub_button" markdown>To appear at IJCNN '24</span>
+    [Arxiv](https://arxiv.org/abs/2404.15350){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [Code](https://github.com/anp-scp/fast_bci){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } <span class="pub_button extra_space_in_phones" markdown>BIB (1)</span> <span class="pub_button" markdown>To appear at IJCNN '24</span>
     
     ---
 

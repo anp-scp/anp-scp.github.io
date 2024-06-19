@@ -191,3 +191,10 @@ div.custom_admonition {
 .news_event_code_color {
     color: #007bff !important;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .extra_space_in_phones {
+      margin-bottom: 5px;
+    }
+}
