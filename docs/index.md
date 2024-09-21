@@ -22,7 +22,7 @@ template: home.html
 </div>
 <div class="custom_col-8" markdown></div>
 
-Anupam Sharma is a masters student at department of Computer Science & Engineering at the [Indian Institute of Technology, Gandhinagar (IITGN)](https://iitgn.ac.in) and soon be joining IITGN as a PhD scholar. He previously completed his Bachelors in Technology from [Central Institute of Technology Assam](https://cit.ac.in) and worked as a Project Engineer at the Cyber Defense Center at [Wipro Ltd](https://wipro.com).
+Anupam Sharma is a PhD student at department of Computer Science & Engineering at the [Indian Institute of Technology, Gandhinagar (IITGN)](https://iitgn.ac.in). He previously completed his Bachelors in Technology from [Central Institute of Technology Assam](https://cit.ac.in) and worked as a Project Engineer at the Cyber Defense Center at [Wipro Ltd](https://wipro.com).
 
 His research interests include deep learning, representation learning, meta-learning and its application in Brain-Computer Interface (BCI) domain.
 
