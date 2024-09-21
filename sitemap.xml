@@ -2,47 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anp-scp.github.io/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/news/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/projects/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/publications/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/blog/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/blog/2019/01/01/deep-dive-into-support-vector-machine-octicons-link-external-16/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/blog/2023/05/30/preprocess-custom-text-dataset-using-torchtext-octicons-link-external-16/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/blog/category/nlp/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
     <url>
          <loc>https://anp-scp.github.io/blog/category/machine-learning/</loc>
-         <lastmod>2024-06-19</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-09-21</lastmod>
     </url>
 </urlset>
