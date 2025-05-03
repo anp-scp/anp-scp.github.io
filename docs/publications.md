@@ -9,7 +9,7 @@ hide:
 
 * __Anupam Sharma__, Sreyashi Karmakar, Gayatri Priyadarsini Kancherla and Abhishek Bichhawat, "On the Prevalence and Usage of Commit Signing on GitHub: A Longitudinal and Cross-Domain Study," _2025 International Conference on Evaluation and Assessment in Software Engineering (EASE)_, Istanbul, Turkey, 2025
     
-    [Code](https://github.com/anp-scp/commit_crawler){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [Arxiv](https://arxiv.org/abs/2504.19215){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } <span class="pub_button" markdown>To appear at EASE'25</span>
+    [Code](https://github.com/anp-scp/commit_crawler){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [Arxiv](https://arxiv.org/abs/2504.19215){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [To appear at EASE '25](https://conf.researchr.org/details/ease-2025/ease-2025-research-papers/33/On-the-Prevalence-and-Usage-of-Commit-Signing-on-GitHub-A-Longitudinal-and-Cross-Dom){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones }
     
     ---
 </div>
