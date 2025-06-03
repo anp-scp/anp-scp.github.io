@@ -7,7 +7,7 @@ hide:
 
 <div class="annotate" markdown>
 
-* __Anupam Sharma__, Sreyashi Karmakar, Gayatri Priyadarsini Kancherla and Abhishek Bichhawat, "On the Prevalence and Usage of Commit Signing on GitHub: A Longitudinal and Cross-Domain Study," _2025 International Conference on Evaluation and Assessment in Software Engineering (EASE)_, Istanbul, Turkey, 2025
+* __Anupam Sharma__, Sreyashi Karmakar, Gayatri Priyadarsini Kancherla and Abhishek Bichhawat, "On the Prevalence and Usage of Commit Signing on GitHub: A Longitudinal and Cross-Domain Study," _2025 International Conference on Evaluation and Assessment in Software Engineering (EASE)_
     
     [Code](https://github.com/anp-scp/commit_crawler){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [Arxiv](https://arxiv.org/abs/2504.19215){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [To appear at EASE '25](https://conf.researchr.org/details/ease-2025/ease-2025-research-papers/33/On-the-Prevalence-and-Usage-of-Commit-Signing-on-GitHub-A-Longitudinal-and-Cross-Dom){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones }
     
@@ -16,7 +16,7 @@ hide:
 
 <div class="annotate" markdown>
 
-* __Anupam Sharma__ and Krishna Miyapuram, "Evaluating Fast Adaptability of Neural Networks for Brain-Computer Interface," _2024 International Joint Conference on Neural Networks (IJCNN)_, Yokohama, Japan, 2024
+* __Anupam Sharma__ and Krishna Miyapuram, "Evaluating Fast Adaptability of Neural Networks for Brain-Computer Interface," _2024 International Joint Conference on Neural Networks (IJCNN)_
     
     [DOI](https://doi.org/10.1109/IJCNN60899.2024.10650562){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } [Code](https://github.com/anp-scp/fast_bci){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } <span class="pub_button extra_space_in_phones" markdown>BIB (1)</span> [Arxiv](https://arxiv.org/abs/2404.15350){:target="_blank" .pub_button .pub_button_clickable .extra_space_in_phones } <!--<span class="pub_button" markdown>To appear at IJCNN '24</span> -->
     
