@@ -11,6 +11,9 @@
 .center_align {
     text-align: center;
 }
+.justify_align {
+    text-align: justify !important;
+}
 
 /* Custom columns for grid-view for Responsive Web Design */
 .custom_col-1 {width: 8.33%;}
