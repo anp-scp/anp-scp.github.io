@@ -12,6 +12,6 @@ A detailed article on Support Vector Machine published in [Towards Data Science]
 
 <!-- more -->
 <span class="pub_button">Redirecting to Towarda Data Science</span>
-<script>window.location.href = "https://towardsdatascience.com/deep-dive-into-support-vector-machine-654c8d517103";</script>
-
+<!-- <script>window.location.href = "https://towardsdatascience.com/deep-dive-into-support-vector-machine-654c8d517103";</script> -->
+<script>window.location.href = "https://medium.com/data-science/deep-dive-into-support-vector-machine-654c8d517103";</script>
 
