@@ -8,7 +8,7 @@ categories:
 
 # Boolean Propositional Logic for software installations?
 
-In this blog, we will discuss an application of `Boolean Propositional Logic` in software development.
+In this blog, we will discuss an application of `Boolean Propositional Logic` in package management in software development and then will play a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you will act as a package manager.
 
 If you have ever worked on a software development project, be it a small project for learning new skills or a project running in production, you might have used a package manager to install some libraries for your project. Here, we proceed with an example of a `conda` package manager. But similar variants are used by other package managers.
 
@@ -255,7 +255,11 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
 `Conda` raising an unsatifiable error as it finds an unsatisfiable conditions. Th user tries to install `numpy-1.15.4` which depends on `python` with versions `>=2.7,<2.8.0a0`, `>=3.6,<3.7.0a0`, and `python >=3.7,<3.8.0a0`. However, another dependency of `numpy` is `pin-1` depends on `python-3.10` which conflicts with the previously reported requirements of `python`.
 ///
 
+???+ tip "Game time !!!"
 
+    Wan't to try your hand at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
+
+    Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
 ## Regarding solving the SAT problem
 
 Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable $x_i$ or its negation $\neg x_i$). 
