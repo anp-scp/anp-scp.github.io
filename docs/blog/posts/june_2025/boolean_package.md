@@ -1,6 +1,9 @@
 ---
 draft: false
 date: 2025-06-12
+authors:
+  - anp-scp
+  - AyushShrivstava
 categories:
   - Propositional Logic
   - Software Development
