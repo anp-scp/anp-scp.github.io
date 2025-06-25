@@ -66,6 +66,7 @@ plugins:
   - search
   - blog:
       archive: false
+      authors: false
 
 extra_javascript:
   - javascripts/katex.js
