@@ -9,7 +9,9 @@ categories:
 # Boolean Propositional Logic for software installations.
 
 
-Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you can act as a package manager yourself.
+Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. 
+
+In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you can act as a package manager yourself.
 
 
 <!-- more -->
@@ -266,13 +268,13 @@ Used to define and enforce access rules in computer systems based on roles, perm
 **Examples:**
 
 - Grant access if the user is an admin or has read permission:  
-  `Access → (Admin ∨ ReadPermission)`
+  $ \text{Access} \implies (\text{Admin} \lor \text{ReadPermission})$
 
 - Deny access during lockdown:  
-  `Lockdown → ¬Access`
+  $ \text{Lockdown} \implies \neg \text{ Access }$
 
 - A guest and admin role cannot be assigned together:  
-  `¬(Guest ∧ Admin)`
+  $ \neg (\text{ Guest } \land \text{ Admin })$
 
 
 ### **Formal Verification**
@@ -282,9 +284,9 @@ Used to prove correctness of hardware or software components by encoding their b
 **Examples:**
 
 - Verify that a half-adder circuit never outputs `Sum = 1` and `Carry = 1` when both inputs are zero:  
-  `A = 0 ∧ B = 0 → ¬(Sum ∧ Carry)`
+  $ \text{A} = 0 \land \text{B} = 0 \implies \neg (\text{Sum} \land \text{Carry})$
 
-- Negate the property and check if `A = 0 ∧ B = 0 ∧ Sum = 1 ∧ Carry = 1` is satisfiable using a SAT solver.
+- Negate the property and check if $ \text{A} = 0 \land \text{B} = 0 \land \text{Sum} = 1 \land \text{Carry} = 1$ is satisfiable using a SAT solver.
 
 - If unsatisfiable, the property holds and the circuit behaves correctly in that case.
 
@@ -296,13 +298,13 @@ Used in academic planning tools to ensure students meet course prerequisites and
 **Examples:**
 
 - Taking CS201 requires completing CS101:  
-  `CS201 → CS101`
+  $ \text{CS201} \implies \text{CS101}$
 
 - Prevent scheduling overlap between Bio101 and Chem101:  
-  `¬(Bio101 ∧ Chem101)`
+  $ \neg  (\text{Bio101} \land \text{Chem101})$
 
 - Choose only one from three electives:  
-  `(E1 ∨ E2 ∨ E3) ∧ ¬(E1 ∧ E2) ∧ ¬(E1 ∧ E3) ∧ ¬(E2 ∧ E3)`
+  $ (\text{E1} \lor \text{E2} \lor \text{E3}) \land \neg (\text{E1} \land \text{E2}) \land \neg (\text{E1} \land \text{E3}) \land \neg (\text{E2} \land \text{E3})$
 
 
 ### **Resource Management by Operating Systems**
@@ -312,13 +314,13 @@ Used to manage allocation of resources like CPU, memory, and I/O without conflic
 **Examples:**
 
 - A process can run only if it has both CPU and memory available:  
-  `Run → (HasCPU ∧ HasMemory)`
+  $ \text{Run} \implies (\text{HasCPU} \land \text{HasMemory})$
 
 - Two processes cannot write to the same file simultaneously:  
-  `¬(Write(P1, FileX) ∧ Write(P2, FileX))`
+  $ \neg (\text{Write(P1, FileX)} \land \text{Write(P2, FileX)})$
 
 - Deadlock detection rules:  
-  `Request(A) ∧ Hold(B) ∧ WaitsFor(B, A) → PotentialDeadlock`
+  $ \text{Request(A)} \land \text{Hold(B)} \land \text{WaitsFor(B, A)} \implies \text{PotentialDeadlock}$
 
 
 
