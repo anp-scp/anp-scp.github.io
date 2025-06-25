@@ -1,16 +1,16 @@
 ---
 draft: false
-date: 2025-06-12 
+date: 2025-06-12
 categories:
   - Propositional Logic
   - Software Development
 ---
 
-# Boolean Propositional Logic for software installations?
+# Boolean Propositional Logic for software installations.
 
-In this blog, we will discuss an application of `Boolean Propositional Logic` in package management in software development and then will play a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you will act as a package manager.
 
-If you have ever worked on a software development project, be it a small project for learning new skills or a project running in production, you might have used a package manager to install some libraries for your project. Here, we proceed with an example of a `conda` package manager. But similar variants are used by other package managers.
+Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you can act as a package manager yourself.
+
 
 <!-- more -->
 
@@ -27,20 +27,21 @@ If you have ever worked on a software development project, be it a small project
     7. $F \implies G$ where F and G are formulas. This is referred to as implication, which is equivalent to $\neg F \lor G$
 
 
-???+ info "What is a package manager?"
+## What is a package manager?
 
-    A package manager is like an app store for developers, but instead of downloading games or social media apps, it helps them download pieces of code (called packages) that someone else has already written to solve common problems. They can now use this downloaded code to build new stuff upon it.
-    
-    Imagine you're cooking a complex meal. You need salt, pepper, pasta, sauce, etc. Instead of growing tomatoes or grinding flour yourself, you just go to the store and buy what you need.
-    
-    A package manager is that store for developers. It helps them:
-    
-    - **Find** the ingredients (code libraries) they need.
-    - **Download** and **install** them quickly.
-    - **Keep them up to date**.
-    - **Make sure all ingredients work well together** (handle compatibility).
+A package manager is like an app store for developers, but instead of downloading games or social media apps, it helps them download pieces of code (called packages) that someone else has already written to solve common problems. They can now use this downloaded code to build new stuff upon it.
+
+Imagine you're cooking a complex meal. You need salt, pepper, pasta, sauce, etc. Instead of growing tomatoes or grinding flour yourself, you just go to the store and buy what you need.
+
+A package manager is that store for developers. It helps them:
+
+- **Find** the ingredients (code libraries) they need.
+- **Download** and **install** them quickly.
+- **Keep them up to date**.
+- **Make sure all ingredients work well together** (handle compatibility).
 
 
+Here, we proceed with an example of a `conda` package manager. However, the same concepts apply to many other package managers as well.
 Say, we want to install a package named `numpy` via the `conda` package manager. We do this via `conda install numpy` :
 
 
@@ -50,7 +51,7 @@ Say, we want to install a package named `numpy` via the `conda` package manager.
   </video>
 </figure>
 
-The above animation shows what happens after we enter `conda install numpy`. But, where is the boolean logic involved here? Do you observe the list of other packages populated by `conda` that it wants to install? These are the packages that are kind of prerequisites for the `numpy` package to work properly and are called dependencies. A Boolean formula is used to determine this list of packages. Let us explore how the Boolean formula is leveraged here and if the task is as easy as it looks in the animation above.
+The above video shows what happens after we enter the command `conda install numpy` in a terminal. But, where is the boolean logic involved here? Do you observe the list of other packages populated by `conda` that it wants to install? These are the packages that are kind of prerequisites for the `numpy` package to work properly and are called dependencies. A Boolean formula is used to determine this list of packages. Let us explore how the Boolean formula is leveraged here and if the task is as easy as it looks in the animation above.
 
 ## Scenario
 
@@ -254,6 +255,74 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
     attrs: {class: "justify_align"}
 `Conda` raising an unsatifiable error as it finds an unsatisfiable conditions. Th user tries to install `numpy-1.15.4` which depends on `python` with versions `>=2.7,<2.8.0a0`, `>=3.6,<3.7.0a0`, and `python >=3.7,<3.8.0a0`. However, another dependency of `numpy` is `pin-1` depends on `python-3.10` which conflicts with the previously reported requirements of `python`.
 ///
+
+## **Other Satisfiability Problems**
+
+There are many other many satisfiability problems that are of interest to computer scientists. We list a couple of them below.
+
+### **Access Control Policies**
+Used to define and enforce access rules in computer systems based on roles, permissions, and environmental conditions.
+
+**Examples:**
+
+- Grant access if the user is an admin or has read permission:  
+  `Access → (Admin ∨ ReadPermission)`
+
+- Deny access during lockdown:  
+  `Lockdown → ¬Access`
+
+- A guest and admin role cannot be assigned together:  
+  `¬(Guest ∧ Admin)`
+
+
+### **Formal Verification**
+
+Used to prove correctness of hardware or software components by encoding their behavior and properties as propositional logic formulas.
+
+**Examples:**
+
+- Verify that a half-adder circuit never outputs `Sum = 1` and `Carry = 1` when both inputs are zero:  
+  `A = 0 ∧ B = 0 → ¬(Sum ∧ Carry)`
+
+- Negate the property and check if `A = 0 ∧ B = 0 ∧ Sum = 1 ∧ Carry = 1` is satisfiable using a SAT solver.
+
+- If unsatisfiable, the property holds and the circuit behaves correctly in that case.
+
+
+### **Course Prerequisites and Scheduling**
+
+Used in academic planning tools to ensure students meet course prerequisites and avoid scheduling conflicts.
+
+**Examples:**
+
+- Taking CS201 requires completing CS101:  
+  `CS201 → CS101`
+
+- Prevent scheduling overlap between Bio101 and Chem101:  
+  `¬(Bio101 ∧ Chem101)`
+
+- Choose only one from three electives:  
+  `(E1 ∨ E2 ∨ E3) ∧ ¬(E1 ∧ E2) ∧ ¬(E1 ∧ E3) ∧ ¬(E2 ∧ E3)`
+
+
+### **Resource Management by Operating Systems**
+
+Used to manage allocation of resources like CPU, memory, and I/O without conflicts or deadlocks.
+
+**Examples:**
+
+- A process can run only if it has both CPU and memory available:  
+  `Run → (HasCPU ∧ HasMemory)`
+
+- Two processes cannot write to the same file simultaneously:  
+  `¬(Write(P1, FileX) ∧ Write(P2, FileX))`
+
+- Deadlock detection rules:  
+  `Request(A) ∧ Hold(B) ∧ WaitsFor(B, A) → PotentialDeadlock`
+
+
+
+
 
 ???+ tip "Game time !!!"
 
