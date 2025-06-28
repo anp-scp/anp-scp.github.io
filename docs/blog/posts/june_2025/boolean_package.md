@@ -9,7 +9,7 @@ categories:
   - Software Development
 ---
 
-# Boolean Propositional Logic for software installations.
+# Boolean Propositional Logic for software installations
 
 
 Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. 
@@ -355,9 +355,9 @@ Used to manage allocation of resources like CPU, memory, and Input/Output (I/O) 
 
 ## References:
 
-1. [Dependency Resolution Made Simple](https://borretti.me/article/dependency-resolution-made-simple)
-2. [The Magic of Dependency Resolution](https://ochagavia.nl/blog/the-magic-of-dependency-resolution/)
-3. [Version SAT](https://research.swtch.com/version-sat)
-4. [Deep Dive into Conda Install](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-install.html#deep-dive-install)
-5. [Deep dive: solvers](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-solvers.html)
-6. [LibMamba vs Classic](https://conda.github.io/conda-libmamba-solver/user-guide/libmamba-vs-classic/)
+1. [Dependency Resolution Made Simple](https://borretti.me/article/dependency-resolution-made-simple){:target="_blank"}
+2. [The Magic of Dependency Resolution](https://ochagavia.nl/blog/the-magic-of-dependency-resolution/){:target="_blank"}
+3. [Version SAT](https://research.swtch.com/version-sat){:target="_blank"}
+4. [Deep Dive into Conda Install](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-install.html#deep-dive-install){:target="_blank"}
+5. [Deep dive: solvers](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-solvers.html){:target="_blank"}
+6. [LibMamba vs Classic](https://conda.github.io/conda-libmamba-solver/user-guide/libmamba-vs-classic/){:target="_blank"}
