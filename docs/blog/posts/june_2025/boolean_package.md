@@ -261,17 +261,41 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
 `Conda` raising an unsatifiable error as it finds an unsatisfiable conditions. Th user tries to install `numpy-1.15.4` which depends on `python` with versions `>=2.7,<2.8.0a0`, `>=3.6,<3.7.0a0`, and `python >=3.7,<3.8.0a0`. However, another dependency of `numpy` is `pin-1` depends on `python-3.10` which conflicts with the previously reported requirements of `python`.
 ///
 
-## **Other Satisfiability Problems**
 
-There are many other many satisfiability problems that are of interest to computer scientists. We list a couple of them below.
+???+ tip "Game time !!!"
 
-### **Access Control Policies**
+    Wan't to try your hand at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
+
+    Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
+## Regarding solving the SAT problem
+
+Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable $x_i$ or its negation $\neg x_i$). 
+
+If we express the time taken to verify the boolean formula with $n$ literals as the number of computation performed, then the time to verify a SAT formula would be some linear function of $n$, which would be a polynomial (as we need to iterate though the operands and replace it with result of the operands until we get the final result). We can think of a sequence of operations that can be performed in polynomial time as a fast algorithm (let us refer to the sequence of operations as an algorithm). Such problems are considered to be a part of a class of problems named `p`. So, verification of a Boolean formula given an assignment comes under the `p` class of problems.
+
+Now, let us discuss how to find an assignment of the variables. The most naive way would be to try all possible assignments. But this would be exponential in terms of the number of variables. The larger the number of variables, the longer it takes to find an assignment. But, do we have an algorithm that can find an assignment in polynomial time instead of exponential time? Interestingly, the current experience of mathematicians is that there is no such algorithm. However, there exist implementations of heuristic SAT solvers that can find satisfying assignments in a reasonable time, and tons of research is done in developing such algorithms. Discussion of those algorithms is out of the scope of this blog due to my limited knowledge in that area. But, the good news is we can use those implementations to solve our problem of selecting the appropriate dependencies. In addition to this, the implementations also provide recommendations to make the problem satisfiable if it is not, as seen in the situation described in [Figure 4](#__figure-caption_4). For example, `conda` uses some implementations like `PicoSAT` and `libsolv`. If you are comfortable in Python, you may check PySAT, which provides an implementation of SAT solvers in Python.
+
+## How difficult is the SAT problem?
+
+???+ info "What is reduction?"
+    
+    If we can transform one problem `A` into another problem `B` in polynomial time, we say that problem `A` is reduced to problem `B`. If we find a polynomial time algorithm for `B`, we will have a polynomial time algorithm for `A` too by first transforming `A` to `B` and then solving for `B`. For example, our problem of finding the correct selection of packages has been transformed into a SAT problem in polynomial time. We just had to write boolean formulas for each condition, and doing so is equivalent to doing tasks with a number of operations as some constant times the number of conditions, which would be linear in the number of conditions.
+    
+
+As of now, we don’t have a polynomial time algorithm for solving the SAT problem, but we saw that given a solution, the verification can be done in polynomial time, and such problems with polynomial time verification are said to be in the class named `np`. An interesting fact about the SAT problem is that any other problem in `np` can be reduced to SAT in polynomial time. One such example is our problem of selecting appropriate packages that satisfy all dependencies. That means if we have a polynomial time algorithm to solve SAT, then we have a polynomial time algorithm for all other problems in `np`. Mathematicians ***believe*** that there is no such algorithm, and nobody has been able to ***prove*** this yet. But if one can find such an algorithm, then not only will installing a package become fast, but it will also lead to crazy consequences. Check [this video](https://www.youtube.com/watch?v=6OPsH8PK7xM){:target="_blank"} for more information on this.
+
+
+## Other Applications of Boolean Propositional Logic
+
+There are many other applications of boolean formulas in everyday life. We list a couple of them below.
+
+### Access Control Policies
 Used to define and enforce access rules in computer systems based on roles, permissions, and environmental conditions.
 
 **Examples:**
 
 - Grant access if the user is an admin or has read permission:  
-  $ \text{Access} \implies (\text{Admin} \lor \text{ReadPermission})$
+  $ (\text{Admin} \lor \text{ReadPermission}) \implies \text{Access}$
 
 - Deny access during lockdown:  
   $ \text{Lockdown} \implies \neg \text{ Access }$
@@ -280,21 +304,7 @@ Used to define and enforce access rules in computer systems based on roles, perm
   $ \neg (\text{ Guest } \land \text{ Admin })$
 
 
-### **Formal Verification**
-
-Used to prove correctness of hardware or software components by encoding their behavior and properties as propositional logic formulas.
-
-**Examples:**
-
-- Verify that a half-adder circuit never outputs `Sum = 1` and `Carry = 1` when both inputs are zero:  
-  $ \text{A} = 0 \land \text{B} = 0 \implies \neg (\text{Sum} \land \text{Carry})$
-
-- Negate the property and check if $ \text{A} = 0 \land \text{B} = 0 \land \text{Sum} = 1 \land \text{Carry} = 1$ is satisfiable using a SAT solver.
-
-- If unsatisfiable, the property holds and the circuit behaves correctly in that case.
-
-
-### **Course Prerequisites and Scheduling**
+### Course Prerequisites and Scheduling
 
 Used in academic planning tools to ensure students meet course prerequisites and avoid scheduling conflicts.
 
@@ -310,43 +320,44 @@ Used in academic planning tools to ensure students meet course prerequisites and
   $ (\text{E1} \lor \text{E2} \lor \text{E3}) \land \neg (\text{E1} \land \text{E2}) \land \neg (\text{E1} \land \text{E3}) \land \neg (\text{E2} \land \text{E3})$
 
 
-### **Resource Management by Operating Systems**
+### Resource Management by Operating Systems
 
-Used to manage allocation of resources like CPU, memory, and I/O without conflicts or deadlocks.
+Used to manage allocation of resources like CPU, memory, and Input/Output (I/O) devices in a computer system without conflicts or deadlocks.
 
 **Examples:**
 
 - A process can run only if it has both CPU and memory available:  
-  $ \text{Run} \implies (\text{HasCPU} \land \text{HasMemory})$
+  $ (\text{HasCPU} \land \text{HasMemory}) \implies \text{CanRun}$
 
 - Two processes cannot write to the same file simultaneously:  
   $ \neg (\text{Write(P1, FileX)} \land \text{Write(P2, FileX)})$
+  Here, $P1$ and $P2$ are two processes or software running in a computer system, and $FileX$ is a file.
 
-- Deadlock detection rules:  
-  $ \text{Request(A)} \land \text{Hold(B)} \land \text{WaitsFor(B, A)} \implies \text{PotentialDeadlock}$
+- Deadlock detection rules:
 
+    Imagine a system with:
 
+    - Two processes: P1 and P2
+    - Two resources: R1 and R2
 
+    Scenario:
 
+    - P1 holds R1 and is waiting for R2. P1 will never reach to completion if it doesn't get R2.
+    - P2 holds R2 and is waiting for R1. P2 will never reach to completion if it doesn't get R1.
 
-???+ tip "Game time !!!"
+    This creates a circular wait, which is one of the conditions for deadlock. Let’s define Boolean variables:
 
-    Wan't to try your hand at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
+    - Hold(Pi, Rj) would be True if Pi holds Rj for some usage
+    - Wait(Pi, Rj) would be True if Pi is waiting for Rj to be released by some other process
+  
+  Now the following formula can be used to detect potential deadlocks:
+  $ (\text{Hold}(P1, R1) \land \text{Wait}(P1, R2) \land \text{Hold}(P2, R2) \land \text{Wait}(P2, R1) ) \implies \text{Deadlock}$
 
-    Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
-## Regarding solving the SAT problem
+## References:
 
-Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable $x_i$ or its negation $\neg x_i$). 
-
-If we express the time taken to verify the boolean formula with $n$ literals as the number of computation performed, then the time to verify a SAT formula would be some linear function of $n$, which would be a polynomial (as we need to iterate though the operands and replace it with result of the operands until we get the final result). We can think of a sequence of operations that can be performed in polynomial time as a fast algorithm (let us refer to the sequence of operations as an algorithm). Such problems are considered to be a part of a class of problems named `p`. So, verification of a Boolean formula given an assignment comes under the `p` class of problems.
-
-Now, let us discuss how to find an assignment of the variables. The most naive way would be to try all possible assignments. But this would be exponential in terms of the number of variables. The larger the number of variables, the longer it takes to find an assignment. But, do we have an algorithm that can find an assignment in polynomial time instead of exponential time? Interestingly, the current experience of mathematicians is that there is no such algorithm. However, there exist implementations of heuristic SAT solvers that can find satisfying assignments in a reasonable time, and tons of research is done in developing such algorithms. Discussion of those algorithms is out of the scope of this blog due to my limited knowledge in that area. But, the good news is we can use those implementations to solve our problem of selecting the appropriate dependencies. In addition to this, the implementations also provide recommendations to make the problem satisfiable if it is not, as seen in the situation described in [Figure 4](#__figure-caption_4). For example, `conda` uses and implementation called `PicoSAT`. If you are comfortable in Python, you may check PySAT, which provides an implementation of SAT solvers in Python.
-
-## Extras
-
-???+ info "What is reduction?"
-    
-    If we can transform one problem `A` into another problem `B` in polynomial time, we say that problem `A` is reduced to problem `B`. If we find a polynomial time algorithm for `B`, we will have a polynomial time algorithm for `A` too by first transforming `A` to `B` and then solving for `B`. For example, our problem of finding the correct selection of packages has been transformed into a SAT problem in polynomial time. We just had to write boolean formulas for each condition, and doing so is equivalent to doing tasks with a number of operations as some constant times the number of conditions, which would be linear in the number of conditions.
-    
-
-As of now, we don’t have a polynomial time algorithm for solving the SAT problem, but we saw that given a solution, the verification can be done in polynomial time, and such problems with polynomial time verification are said to be in the class named `np`. An interesting fact about the SAT problem is that any other problem in `np` can be reduced to SAT in polynomial time. One such example is our problem of selecting appropriate packages that satisfy all dependencies. That means if we have a polynomial time algorithm to solve SAT, then we have a polynomial time algorithm for all other problems in `np`. Mathematicians ***believe*** that there is no such algorithm, and nobody has been able to ***prove*** this yet. But if one can find such an algorithm, then not only will installing a package become fast, but it will also lead to crazy consequences. Check [this video](https://www.youtube.com/watch?v=6OPsH8PK7xM){:target="_blank"} for more information on this.
+1. [Dependency Resolution Made Simple](https://borretti.me/article/dependency-resolution-made-simple)
+2. [The Magic of Dependency Resolution](https://ochagavia.nl/blog/the-magic-of-dependency-resolution/)
+3. [Version SAT](https://research.swtch.com/version-sat)
+4. [Deep Dive into Conda Install](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-install.html#deep-dive-install)
+5. [Deep dive: solvers](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-solvers.html)
+6. [LibMamba vs Classic](https://conda.github.io/conda-libmamba-solver/user-guide/libmamba-vs-classic/)
