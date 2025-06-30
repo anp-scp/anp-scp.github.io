@@ -262,11 +262,12 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
 ///
 
 
-???+ tip "Game time !!!"
+## :material-gamepad-variant: Game time !!!
 
-    Wan't to try your hand at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
+Wan't to try your hands at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
 
-    Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
+Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
+
 ## Regarding solving the SAT problem
 
 Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable $x_i$ or its negation $\neg x_i$). 
