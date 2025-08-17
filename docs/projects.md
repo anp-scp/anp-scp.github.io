@@ -7,6 +7,16 @@ hide:
 
 <div class="grid cards" markdown>
 
+-   __Package Dependency Game__
+
+    ---
+
+    An interactive web-based game that simulates the process of resolving package dependencies. Players are presented with a set of packages and their dependencies, and must determine a valid installation order or identify conflicts. The game is designed to help users understand the role of Boolean Propositional Logic in dependency resolution algorithms.
+
+    [:octicons-arrow-right-24: About](https://anp-scp.github.io/package_resolving_game/about.html){:target="_blank"}
+    
+    [:octicons-arrow-right-24: Play](https://anp-scp.github.io/package_resolving_game/index.html){:target="_blank"}
+
 -   __Website of Brain Lab__
 
     ---
