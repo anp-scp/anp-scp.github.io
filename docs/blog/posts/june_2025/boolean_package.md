@@ -14,7 +14,7 @@ categories:
 
 Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. 
 
-In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://package-resolving.streamlit.app/){:target="_blank"} where you can act as a package manager yourself.
+In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://anp-scp.github.io/package_resolving_game/){:target="_blank"} where you can act as a package manager yourself.
 
 
 <!-- more -->
@@ -46,7 +46,7 @@ A package manager is that store for developers. It helps them:
 - **Make sure all ingredients work well together** (handle compatibility).
 
 
-Here, we proceed with an example of a `conda` package manager. However, the same concepts apply to many other package managers as well.
+Here, we proceed with an example of a package manager named `conda`. However, the same concepts apply to many other package managers as well.
 Say, we want to install a package named `numpy` via the `conda` package manager. We do this via `conda install numpy` :
 
 
@@ -56,7 +56,7 @@ Say, we want to install a package named `numpy` via the `conda` package manager.
   </video>
 </figure>
 
-The above video shows what happens after we enter the command `conda install numpy` in a terminal. But, where is the boolean logic involved here? Do you observe the list of other packages populated by `conda` that it wants to install? These are the packages that are kind of prerequisites for the `numpy` package to work properly and are called dependencies. A Boolean formula is used to determine this list of packages. Let us explore how the Boolean formula is leveraged here and if the task is as easy as it looks in the animation above.
+The above video shows what happens after we enter the command `conda install numpy` in a terminal. But, where is the boolean logic involved here? Do you observe the list of other packages populated by `conda` that it wants to install? These are the packages that are kind of prerequisites for the `numpy` package to work properly and are called dependencies. A Boolean formula is used to determine this list of packages. Let us explore how the Boolean formula is leveraged here and if the task is as easy as it looks in the video above.
 
 ## Scenario
 
@@ -228,7 +228,7 @@ $$
 Evaluation of the statement based on the incompatible selection. Since one term evaluates to False, the whole conjunction will lead to False, and the selection would be marked as incorrect.
 ///
 
-We can observe in [Table 4](#__table-caption_4) that the formula detects the incompatibility described in [Figure 3](#__figure-caption_3) as the implication $Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)$ becomes `False`. Selecting `Gamma-0.5` makes $Gamma0.5=True$ and other packages  `False` . As has to be `True`, the whole term evaluates to `False`. The task of the package manager is to avoid such assignments.
+We can observe in [Table 4](#__table-caption_4) that the formula detects the incompatibility described in [Figure 3](#__figure-caption_3) as the implication $Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)$ becomes `False` making the whole formula `False` due to conjunction. The task of the package manager is to avoid such assignments.
 
 Now, let us see an unsatisfiable situation that leads to an unsatisfiable instance of the SAT problem.
 
@@ -266,7 +266,7 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
 
 Wan't to try your hands at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
 
-Game: [Package Dependency Resolution Game](https://package-resolving.streamlit.app/){:target="_blank"}
+Game: [Package Dependency Resolution Game](https://anp-scp.github.io/package_resolving_game/){:target="_blank"}
 
 ## Regarding solving the SAT problem
 
