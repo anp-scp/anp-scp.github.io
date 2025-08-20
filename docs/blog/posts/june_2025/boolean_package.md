@@ -9,7 +9,7 @@ categories:
   - Software Development
 ---
 
-# Boolean Propositional Logic for software installations
+# SATisfying Installs: How Boolean Logic Navigates Software Dependencies
 
 
 Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. 
