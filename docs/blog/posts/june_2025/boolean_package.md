@@ -14,7 +14,7 @@ categories:
 
 Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. 
 
-In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development. To make things more interactive, we have also included a [small game](https://anp-scp.github.io/package_resolving_game/){:target="_blank"} where you can act as a package manager yourself.
+In this blog post, we explore how `Boolean Propositional Logic` can be used for package management within software development.
 
 
 <!-- more -->
@@ -261,13 +261,6 @@ When there is no option for upgrading/downgrading in an unsatisfiable situation,
 `Conda` raising an unsatifiable error as it finds an unsatisfiable conditions. Th user tries to install `numpy-1.15.4` which depends on `python` with versions `>=2.7,<2.8.0a0`, `>=3.6,<3.7.0a0`, and `python >=3.7,<3.8.0a0`. However, another dependency of `numpy` is `pin-1` depends on `python-3.10` which conflicts with the previously reported requirements of `python`.
 ///
 
-
-## :material-gamepad-variant: Game time !!!
-
-Wan't to try your hands at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
-
-Game: [Package Dependency Resolution Game](https://anp-scp.github.io/package_resolving_game/){:target="_blank"}
-
 ## Regarding solving the SAT problem
 
 Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable $x_i$ or its negation $\neg x_i$). 
@@ -283,15 +276,24 @@ Now, let us discuss how to find an assignment of the variables. The most naive w
     If we can transform one problem `A` into another problem `B` in polynomial time, we say that problem `A` is reduced to problem `B`. If we find a polynomial time algorithm for `B`, we will have a polynomial time algorithm for `A` too by first transforming `A` to `B` and then solving for `B`. For example, our problem of finding the correct selection of packages has been transformed into a SAT problem in polynomial time. We just had to write boolean formulas for each condition, and doing so is equivalent to doing tasks with a number of operations as some constant times the number of conditions, which would be linear in the number of conditions.
     
 
-As of now, we don’t have a polynomial time algorithm for solving the SAT problem, but we saw that given a solution, the verification can be done in polynomial time, and such problems with polynomial time verification are said to be in the class named `np`. An interesting fact about the SAT problem is that any other problem in `np` can be reduced to SAT in polynomial time. One such example is our problem of selecting appropriate packages that satisfy all dependencies. That means if we have a polynomial time algorithm to solve SAT, then we have a polynomial time algorithm for all other problems in `np`. Mathematicians ***believe*** that there is no such algorithm, and nobody has been able to ***prove*** this yet. But if one can find such an algorithm, then not only will installing a package become fast, but it will also lead to crazy consequences. Check [this video](https://www.youtube.com/watch?v=6OPsH8PK7xM){:target="_blank"} for more information on this.
+As of now, we don’t have a polynomial time algorithm for solving the SAT problem, but we saw that given a solution, the verification can be done in polynomial time, and such problems with polynomial time verification are said to be in the class named `np`. An interesting fact about the SAT problem is that any other problem in `np` can be reduced to SAT in polynomial time. One such example is our problem of selecting appropriate packages that satisfy all dependencies. That means if we have a polynomial time algorithm to solve SAT, then we have a polynomial time algorithm for all other problems in `np`. Mathematicians ***believe*** that there is no such algorithm, and nobody has been able to ***prove*** this yet. But if one can find such an algorithm, then not only will installing a package become fast, but it will also lead to crazy consequences. Check [this video](https://www.youtube.com/watch?v=6OPsH8PK7xM){:target="_blank"} by [Polylog](https://www.youtube.com/@PolylogCS){:target="_blank"} for more information on this.
 
+## :material-gamepad-variant: Game time !!!
+
+???+ note
+
+    The game here is provided as a supplementary for better understanding and hands-on example. The game was developed with the help of AI tools ([GitHub Copilot](https://github.com/features/copilot){:target="_blank"}, [Replit](https://replit.com/){:target="_blank"}, [Cursor](https://cursor.so/){:target="_blank"}).
+
+Want to try your hands at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.
+
+Game: [Package Dependency Resolution Game](https://anp-scp.github.io/package_resolving_game/){:target="_blank"}
 
 ## Other Applications of Boolean Propositional Logic
 
-There are many other applications of boolean formulas in everyday life. We list a couple of them below.
+There are many other applications of boolean formulas where constraints can be expressed as boolean formula. We list a couple of them below.
 
 ### Access Control Policies
-Used to define and enforce access rules in computer systems based on roles, permissions, and environmental conditions.
+Can be used to define and enforce access rules in computer systems based on roles, permissions, and environmental conditions.
 
 **Examples:**
 
@@ -307,7 +309,7 @@ Used to define and enforce access rules in computer systems based on roles, perm
 
 ### Course Prerequisites and Scheduling
 
-Used in academic planning tools to ensure students meet course prerequisites and avoid scheduling conflicts.
+Can be used in academic planning tools to ensure students meet course prerequisites and avoid scheduling conflicts.
 
 **Examples:**
 
@@ -323,7 +325,7 @@ Used in academic planning tools to ensure students meet course prerequisites and
 
 ### Resource Management by Operating Systems
 
-Used to manage allocation of resources like CPU, memory, and Input/Output (I/O) devices in a computer system without conflicts or deadlocks.
+Can be used to manage allocation of resources like CPU, memory, and Input/Output (I/O) devices in a computer system without conflicts or deadlocks.
 
 **Examples:**
 
@@ -354,7 +356,7 @@ Used to manage allocation of resources like CPU, memory, and Input/Output (I/O) 
   Now the following formula can be used to detect potential deadlocks:
   $ (\text{Hold}(P1, R1) \land \text{Wait}(P1, R2) \land \text{Hold}(P2, R2) \land \text{Wait}(P2, R1) ) \implies \text{Deadlock}$
 
-## References:
+## References
 
 1. [Dependency Resolution Made Simple](https://borretti.me/article/dependency-resolution-made-simple){:target="_blank"}
 2. [The Magic of Dependency Resolution](https://ochagavia.nl/blog/the-magic-of-dependency-resolution/){:target="_blank"}
@@ -362,3 +364,4 @@ Used to manage allocation of resources like CPU, memory, and Input/Output (I/O) 
 4. [Deep Dive into Conda Install](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-install.html#deep-dive-install){:target="_blank"}
 5. [Deep dive: solvers](https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-solvers.html){:target="_blank"}
 6. [LibMamba vs Classic](https://conda.github.io/conda-libmamba-solver/user-guide/libmamba-vs-classic/){:target="_blank"}
+7. [What P vs NP is actually about](https://www.youtube.com/watch?v=6OPsH8PK7xM0){:target="_blank"}
