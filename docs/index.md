@@ -32,7 +32,7 @@ His research interests include deep learning, representation learning, meta-lear
 [:simple-orcid:](https://orcid.org/0000-0002-3443-4646){:target="_blank" .md-button .extra_space_in_phones } 
 [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/anupam-sharma-7a6090140/){:target="_blank" .md-button .extra_space_in_phones } 
 [:fontawesome-brands-github:](https://github.com/anp-scp/){:target="_blank" .md-button .extra_space_in_phones }  [:octicons-mail-16:](mailto:sharmaanupam@iitgn.ac.in){:target="_blank" .md-button .extra_space_in_phones } 
-[:fontawesome-brands-x-twitter:](https://x.com/mapuna_inverse){:target="_blank" .md-button .extra_space_in_phones }  
+<!-- [:fontawesome-brands-x-twitter:](https://x.com/mapuna_inverse){:target="_blank" .md-button .extra_space_in_phones }   -->
 
 <br>
 </div>
