@@ -1,0 +1,1314 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://anupamsharma.in/blog/2025/06/12/satisfying-installs-how-boolean-logic-navigates-software-dependencies/">
+      
+      
+        <link rel="prev" href="../../../../2023/05/30/preprocess-custom-text-dataset-using-torchtext-octicons-link-external-16/">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+    
+    
+      
+        <title>SATisfying Installs: How Boolean Logic Navigates Software Dependencies - Anupam Sharma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.06209087.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Mono";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#satisfying-installs-how-boolean-logic-navigates-software-dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Anupam Sharma" class="md-header__button md-logo" aria-label="Anupam Sharma" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anupam Sharma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SATisfying Installs: How Boolean Logic Navigates Software Dependencies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../publications/" class="md-tabs__link">
+        
+  
+    
+  
+  Publications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../projects/" class="md-tabs__link">
+        
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../news/" class="md-tabs__link">
+        
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://workdrive.zohopublic.in/file/yipkb5e4fad4e58344375bfa67183ed1ed02a" class="md-tabs__link">
+        
+  
+    
+  
+  CV
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Anupam Sharma" class="md-nav__button md-logo" aria-label="Anupam Sharma" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Anupam Sharma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://workdrive.zohopublic.in/file/yipkb5e4fad4e58344375bfa67183ed1ed02a" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/machine-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/nlp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NLP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/propositional-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Propositional Logic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/software-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a package manager?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transforming-dependency-requirements-to-logical-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transforming dependency requirements to logical formula
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regarding-solving-the-sat-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regarding solving the SAT problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-difficult-is-the-sat-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      How difficult is the SAT problem?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game time !!!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-applications-of-boolean-propositional-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Applications of Boolean Propositional Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Applications of Boolean Propositional Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-prerequisites-and-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Prerequisites and Scheduling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-management-by-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Management by Operating Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/anp-scp" alt="Anupam Sharma">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/anp-scp">Anupam Sharma</a>
+                        
+                      </strong>
+                      <br>
+                      Creator
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/AyushShrivstava" alt="Ayush Shrivastava">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/AyushShrivstava">Ayush Shrivastava</a>
+                        
+                      </strong>
+                      <br>
+                      Contributor
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-06-12 00:00:00" class="md-ellipsis">June 12, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/propositional-logic/">Propositional Logic</a>, 
+                              <a href="../../../../category/software-development/">Software Development</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              16 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="satisfying-installs-how-boolean-logic-navigates-software-dependencies">SATisfying Installs: How Boolean Logic Navigates Software Dependencies</h1>
+<p>Have you ever worked on a software development project, whether it was a small personal project to learn new skills or a large application running in production? If yes, then you have most likely used a package manager to install libraries or dependencies. </p>
+<p>In this blog post, we explore how <code>Boolean Propositional Logic</code> can be used for package management within software development.</p>
+<!-- more -->
+
+<details class="info" open="open">
+<summary>What is a Boolean Propositional Formula?</summary>
+<p>A Boolean Propositional formula consists of variables <span class="arithmatex">\(x_1, \dots , x_n\)</span> and can be one of the following:</p>
+<ol>
+<li>True</li>
+<li>False</li>
+<li><span class="arithmatex">\(x_i\)</span> for some <span class="arithmatex">\(i\)</span></li>
+<li><span class="arithmatex">\(\neg x_i\)</span> for some <span class="arithmatex">\(i\)</span>; if <span class="arithmatex">\(x_i = True\)</span> for some <span class="arithmatex">\(i\)</span>, then <span class="arithmatex">\(\neg x_i = False\)</span></li>
+<li><span class="arithmatex">\(F \lor G\)</span> where F and G are formulas. This is referred to as <code>OR</code> or disjunction</li>
+<li><span class="arithmatex">\(F \land G\)</span> where F and G are formulas. This is referred to as <code>AND</code> or conjunction</li>
+<li><span class="arithmatex">\(F \implies G\)</span> where F and G are formulas. This is referred to as implication, which is equivalent to <span class="arithmatex">\(\neg F \lor G\)</span></li>
+</ol>
+</details>
+<h2 id="what-is-a-package-manager">What is a package manager?</h2>
+<p>A package manager is like an app store for developers, but instead of downloading games or social media apps, it helps them download pieces of code (called packages) that someone else has already written to solve common problems. They can now use this downloaded code to build new stuff upon it.</p>
+<p>Imagine you're cooking a complex meal. You need salt, pepper, pasta, sauce, etc. Instead of growing tomatoes or grinding flour yourself, you just go to the store and buy what you need.</p>
+<p>A package manager is that store for developers. It helps them:</p>
+<ul>
+<li><strong>Find</strong> the ingredients (code libraries) they need.</li>
+<li><strong>Download</strong> and <strong>install</strong> them quickly.</li>
+<li><strong>Keep them up to date</strong>.</li>
+<li><strong>Make sure all ingredients work well together</strong> (handle compatibility).</li>
+</ul>
+<p>Here, we proceed with an example of a package manager named <code>conda</code>. However, the same concepts apply to many other package managers as well.
+Say, we want to install a package named <code>numpy</code> via the <code>conda</code> package manager. We do this via <code>conda install numpy</code> :</p>
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="/assets/blogs/june_2025/boolean_package/final.webm" type="video/webm">
+  </video>
+</figure>
+
+<p>The above video shows what happens after we enter the command <code>conda install numpy</code> in a terminal. But, where is the boolean logic involved here? Do you observe the list of other packages populated by <code>conda</code> that it wants to install? These are the packages that are kind of prerequisites for the <code>numpy</code> package to work properly and are called dependencies. A Boolean formula is used to determine this list of packages. Let us explore how the Boolean formula is leveraged here and if the task is as easy as it looks in the video above.</p>
+<h2 id="scenario">Scenario</h2>
+<p>Say, we want to install a package named <code>Alpha</code> with version <code>2.0</code> (together, we refer to it as <code>Alpha-2.0</code>). The developers of <code>Alpha-2.0</code> specify that their package uses functionalities from the following other packages:</p>
+<ol>
+<li>Beta; either of <code>Beta-1.3</code> or <code>Beta-1.4</code> works.</li>
+<li>Gamma; either of <code>Gamma-0.6</code>  or <code>Gamma-0.7</code> works.</li>
+</ol>
+<p>Based on the above specification, we say that <code>Alpha-2.0</code> depends on <code>Beta</code> with version <code>1.3</code> or <code>1.4</code> and on <code>Gamma</code> with version <code>0.6</code> or <code>0.7</code>.</p>
+<p>However, the developers of <code>Beta</code> specify that their package is also dependent on the functionalities of <code>Gamma</code> in the following manner:</p>
+<ol>
+<li><code>Beta-1.3</code> is dependent on <code>Gamma-0.5</code>.</li>
+<li><code>Beta-1.4</code> is dependent on <code>Gamma-0.6</code>.</li>
+</ol>
+<details class="info" open="open">
+<summary>Info</summary>
+<p>When we say that <code>alpha-2.0</code> depends on either <code>Beta-1.3</code> or <code>Beta-1.4</code>, it could be that <code>alpha-2.0</code> uses the functionalities common to both <code>Beta-1.3</code> and <code>Beta-1.4</code> and not the ones that are new in <code>Beta-1.4</code>. So, we can either install <code>Beta-1.3</code> or <code>Beta-1.4</code>, but not both at the same time.</p>
+</details>
+<p>The above dependencies can be depicted via the diagram shown in <a href="#__figure-caption_1">Figure 1</a>. To create the graph, we assume each version-specific package is a separate package (for example, we consider <code>Beta-1.3</code> and <code>Beta-1.4</code> as different packages) and represent them as vertices. And we create a directed edge from the package to another version-specific package on which the former depends. </p>
+<figure class="justify_align" id="__figure-caption_1">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/dependent1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 1" src="../../../../../assets/blogs/june_2025/boolean_package/dependent1.png" width="400" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 1.</span> Dependency graph: A graph depicting the dependencies of the packages. Each box represents a package and each circle inside the box represents a version. We can consider each package and version combination as a different package altogether. Hence, we consider a version-specific package (e.g. Beta-1.4) as a vertex and create a directed edge from the package to another version-specific package on which the former depends on. </p>
+</figcaption>
+</figure>
+<p>Now, our objective is to pick the packages and versions to be installed in a way such that:</p>
+<ol>
+<li>For each package, only one version is installed to ensure consistency.</li>
+<li>All dependencies are satisfied.</li>
+</ol>
+<p>Given the above conditions, we can observe in <a href="#__figure-caption_2">Figure 2</a> that there are two compatible selections of packages:</p>
+<ol>
+<li>Alpha-2.0, Beta-1.3 and Gamma-0.6</li>
+<li>Alpha-2.0, Beta-1.4, and Gamma-0.7</li>
+</ol>
+<figure class="justify_align" id="__figure-caption_2">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/compatible.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 2" src="../../../../../assets/blogs/june_2025/boolean_package/compatible.png" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 2.</span> Based on our conditions and dependencies, we can have two compatible selections: <code>(i) Alpha-2.0, Beta-1.3 and Gamma-0.6</code>, and <code>(ii) Alpha-2.0, Beta-1.4, Gamma-0.7</code></p>
+</figcaption>
+</figure>
+<p>Given the simplicity of the problem in terms of the number of packages and dependencies, we were able to find the selection easily and visually. But how to formally find the selection for a large number of packages and dependencies? And, how does a package manager do it? The answer is Boolean logic. So, let us now find how to transform the problem into a Boolean formula.</p>
+<h2 id="transforming-dependency-requirements-to-logical-formula">Transforming dependency requirements to logical formula</h2>
+<p><strong><em>Step 1:</em></strong> We represent each version-specific package as a boolean variable, which can be either <code>True</code> or <code>False</code>. When the variable for the package is <code>True</code>, then the package is picked for installation, and if <code>False</code>, then it is not picked.  For our example, we have 6 different variables as follows: <code>Alpha1.0, Beta1.3, Beta1.4, Gamma0.5, Gamma0.6, and Gamma0.7</code>.</p>
+<p><strong><em>Step 2</em></strong>: Each dependency can be represented using implications. For example, if <span class="arithmatex">\(A\)</span> depends on <span class="arithmatex">\(B\)</span> then we say, <span class="arithmatex">\(A \implies B\)</span> which means that if <span class="arithmatex">\(A\)</span> is installed then <span class="arithmatex">\(B\)</span> must be installed and if <span class="arithmatex">\(A\)</span> need not be installed then it doesn’t matter if <span class="arithmatex">\(B\)</span> is installed or not. The dependencies in our example can be represented as follows:</p>
+<ol>
+<li><span class="arithmatex">\(Alpha2.0 \implies (Beta1.3 \lor Beta1.4)\)</span></li>
+<li><span class="arithmatex">\(Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)\)</span></li>
+<li><span class="arithmatex">\(Beta1.3 \implies (Gamma0.5 \lor Gamma0.6)\)</span></li>
+<li><span class="arithmatex">\(Beta1.4 \implies Gamma0.7\)</span></li>
+</ol>
+<p><strong><em>Step 3:</em></strong> To ensure that we have exactly one version of each package, we negate conjunctions of each unordered pair of versions of the same package. Say we have a package <code>A</code> with versions 1 and 2. The boolean formula to ensure a single version would be <span class="arithmatex">\(\neg (A1 \land A2)\)</span>, This ensures that <span class="arithmatex">\(A1\)</span> and <span class="arithmatex">\(A2\)</span> cannot be simultaneously <code>True</code>. For our example, we have the following conjunctions:</p>
+<ol>
+<li><span class="arithmatex">\(\neg (Beta1.3 \land Beta1.4)\)</span></li>
+<li><span class="arithmatex">\(\neg (Gamma0.5 \land Gamma0.6)\)</span></li>
+<li><span class="arithmatex">\(\neg (Gamma0.6 \land Gamma0.7)\)</span></li>
+<li><span class="arithmatex">\(\neg (Gamma0.5 \land Gamma0.7)\)</span></li>
+</ol>
+<p>Now, if we create a conjunction of all four formulas above, we ensure that no two versions of the package become <code>True</code> or get installed at the same time. The conjunction of the above four terms would look like:</p>
+<div class="arithmatex">\[
+\neg (Beta1.3 \land Beta1.4) \land \neg (Gamma0.5 \land Gamma0.6) \land   
+\neg (Gamma0.6 \land Gamma0.7) \land  \neg (Gamma0.5 \land Gamma0.7)
+\]</div>
+<p><strong><em>Step 4:</em></strong> Now we create a conjunction of all the terms in <code>Step 1</code>, <code>Step 2</code>, and <code>Step 3</code>, which will result in the following formula:</p>
+<div class="arithmatex">\[
+[Alpha2.0 \implies (Beta1.3 \lor Beta1.4)] \land \\
+[Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)] \land \\
+[Beta1.3 \implies (Gamma0.5 \lor Gamma0.6)] \land \\
+(Beta1.4 \implies Gamma0.7) \land \\
+\neg (Beta1.3 \land Beta1.4) \land \neg (Gamma0.5 \land Gamma0.6) \land \\
+\neg (Gamma0.6 \land Gamma0.7) \land  \neg (Gamma0.5 \land Gamma0.7)
+\]</div>
+<p><strong><em>Step 5:</em></strong> The most important point is that <code>Alpha-2.0</code> must be installed. Hence, the variable corresponding to it must always be assigned <code>True</code> i.e <span class="arithmatex">\(Alpha2.0 = True\)</span>. So, we create a conjunction of <span class="arithmatex">\(Alpha2.0\)</span> with the formula in step 4:</p>
+<div class="arithmatex">\[
+Alpha2.0 \land [Alpha2.0 \implies (Beta1.3 \lor Beta1.4)] \land \\
+[Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)] \land \\
+[Beta1.3 \implies (Gamma0.5 \lor Gamma0.6)] \land \\
+(Beta1.4 \implies Gamma0.7) \land \\
+\neg (Beta1.3 \land Beta1.4) \land \neg (Gamma0.5 \land Gamma0.6) \land \\
+\neg (Gamma0.6 \land Gamma0.7) \land  \neg (Gamma0.5 \land Gamma0.7)
+\]</div>
+<p>Now, we just want an assignment of boolean values to each of the variables such that the formula evaluates to <code>True</code>. Packages corresponding to variables with <code>True</code> values will be selected for installation. This problem of finding a possible assignment of values to the Boolean variables such that the formula evaluates to <code>True</code> is called the <code>Functional Boolean Satisfiability (FSAT) Problem</code>. A simple extension/simplification of the problem is to decide if a Boolean formula is satisfiable or not, which is known as the <code>Boolean Satisfiability (SAT) Problem</code>.  If we can find a solution for an instance of the FSAT problem, then we can say that the boolean formula is satisfiable, and if we can’t, we say the formula is unsatisfiable.</p>
+<p>Before thinking about how to solve the problem, let us first verify if a solution (compatible selection of packages) we found in <a href="#__figure-caption_2">Figure 2</a> evaluates to <code>True</code>. Since the formula is quite long, we will evaluate each term of the conjunction separately and then evaluate the final result. For the conjunction to be <code>True</code>, all the terms need to be <code>True</code>; otherwise, the whole formula would evaluate to <code>False</code>.</p>
+<p><strong><em>Compatible Selection 1:</em></strong></p>
+<figure class="justify_align" id="__table-caption_1">
+<div class="arithmatex">\[
+\begin{array}{|c |c |}\hline
+Variable &amp; Value \\\hline
+Alpha2.0    &amp;    True       \\Beta1.3     &amp;    True       \\Beta1.4     &amp;    False      \\Gamma0.5    &amp;    False      \\Gamma0.6    &amp;    True       \\Gamma0.7    &amp;    False       \\\hline\end{array}
+\]</div>
+<figcaption>
+<p><span class="caption-prefix">Table 1.</span> Values assigned to each variable as per compatible selection 1</p>
+</figcaption>
+</figure>
+<figure class="justify_align" id="__table-caption_2">
+<div class="arithmatex">\[
+\begin{array}{|c | c |c |}\hline\textbf{Term} &amp; \textbf{Evaluation} &amp; \textbf{Result} \\\hline\text{Alpha2.0} \implies (\text{Beta1.3} \lor \text{Beta1.4}) &amp; \text{True} \implies (\text{True} \lor \text{False}) &amp; \text{True} \\\hline
+\text{Alpha2.0} \implies (\text{Gamma0.6} \lor \text{Gamma0.7}) &amp; \text{True} \implies (\text{True} \lor \text{False}) &amp; \text{True} \\\hline
+\text{Beta1.3} \implies (\text{Gamma0.5} \lor \text{Gamma0.6}) &amp; \text{True} \implies (\text{False} \lor \text{True}) &amp; \text{True} \\\hline
+\text{Beta1.4} \implies \text{Gamma0.7} &amp; \text{False} \implies \text{False} &amp; \text{True} \\\hline
+\neg (\text{Beta1.3} \land \text{Beta1.4}) &amp; \neg (\text{True} \land \text{False}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.5} \land \text{Gamma0.6}) &amp; \neg (\text{False} \land \text{True}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.6} \land \text{Gamma0.7}) &amp; \neg (\text{True} \land \text{False}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.5} \land \text{Gamma0.7}) &amp; \neg (\text{False} \land \text{False}) &amp; \text{True} \\\hline
+\text{Alpha2.0} &amp; \text{True} &amp; \text{True} \\\hline\end{array}
+\]</div>
+<figcaption>
+<p><span class="caption-prefix">Table 2.</span> Evaluation of the statement based on compatible selection 1. Since all the terms evaluate to True, the selection is correct.</p>
+</figcaption>
+</figure>
+<p>We can observe in <a href="#__table-caption_2">Table 2</a> that all the terms evaluate to <code>True</code>, which means the selection of the packages is indeed correct and satisfies our requirements.</p>
+<p><strong><em>An Incompatible Selection</em></strong>:</p>
+<p>Now, let us try an incompatible selection as visualized in <a href="#__figure-caption_3">Figure 3</a>, where <code>Gamma-0.5</code> is selected but <code>Alpha-2.0</code> depends on <code>Gamma</code> with versions &gt; 0.5, which is contradictory (note that we can select only one version of each package). Let us see how our Boolean formula detects this.</p>
+<figure class="justify_align" id="__figure-caption_3">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/incompatible1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 3" src="../../../../../assets/blogs/june_2025/boolean_package/incompatible1.png" width="400" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 3.</span> An incompatible selection of packages. It is so because we select <code>Gamma-0.5</code> but <code>Alpha-2.0</code> needs <code>Gamma</code> with version &gt; 0.5. As we cannot install multiple versions of the same package, this selection makes it incompatible.</p>
+</figcaption>
+</figure>
+<figure class="justify_align" id="__table-caption_3">
+<div class="arithmatex">\[
+\begin{array}{|c |c |}\hline
+Variable &amp; Value \\\hline
+Alpha2.0    &amp;    True       \\Beta1.3     &amp;    True       \\Beta1.4     &amp;    False      \\Gamma0.5    &amp;    True      \\Gamma0.6    &amp;    False       \\Gamma0.7    &amp;    False       \\\hline\end{array}
+\]</div>
+<figcaption>
+<p><span class="caption-prefix">Table 3.</span> Values assigned to each variable as per the incompatible selection in [Figure 3(#__figure-caption_3)].</p>
+</figcaption>
+</figure>
+<figure class="justify_align" id="__table-caption_4">
+<div class="arithmatex">\[
+\begin{array}{|c | c |c |}\hline\textbf{Term} &amp; \textbf{Evaluation} &amp; \textbf{Result} \\\hline\text{Alpha2.0} \implies (\text{Beta1.3} \lor \text{Beta1.4}) &amp; \text{True} \implies (\text{True} \lor \text{False}) &amp; \text{True} \\\hline
+\text{Alpha2.0} \implies (\text{Gamma0.6} \lor \text{Gamma0.7}) &amp; \text{True} \implies (\text{False} \lor \text{False}) &amp; \text{False} \\\hline
+\text{Beta1.3} \implies (\text{Gamma0.5} \lor \text{Gamma0.6}) &amp; \text{True} \implies (\text{True} \lor \text{False}) &amp; \text{True} \\\hline
+\text{Beta1.4} \implies \text{Gamma0.7} &amp; \text{False} \implies \text{False} &amp; \text{True} \\\hline
+\neg (\text{Beta1.3} \land \text{Beta1.4}) &amp; \neg (\text{True} \land \text{False}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.5} \land \text{Gamma0.6}) &amp; \neg (\text{True} \land \text{False}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.6} \land \text{Gamma0.7}) &amp; \neg (\text{False} \land \text{False}) &amp; \text{True} \\\hline
+\neg (\text{Gamma0.5} \land \text{Gamma0.7}) &amp; \neg (\text{True} \land \text{False}) &amp; \text{True} \\\hline
+\text{Alpha2.0} &amp; \text{True} &amp; \text{True} \\\hline\end{array}
+\]</div>
+<figcaption>
+<p><span class="caption-prefix">Table 4.</span> Evaluation of the statement based on the incompatible selection. Since one term evaluates to False, the whole conjunction will lead to False, and the selection would be marked as incorrect.</p>
+</figcaption>
+</figure>
+<p>We can observe in <a href="#__table-caption_4">Table 4</a> that the formula detects the incompatibility described in <a href="#__figure-caption_3">Figure 3</a> as the implication <span class="arithmatex">\(Alpha2.0 \implies (Gamma0.6 \lor Gamma0.7)\)</span> becomes <code>False</code> making the whole formula <code>False</code> due to conjunction. The task of the package manager is to avoid such assignments.</p>
+<p>Now, let us see an unsatisfiable situation that leads to an unsatisfiable instance of the SAT problem.</p>
+<p><strong><em>An unsatisfiable situation</em></strong></p>
+<figure class="justify_align" id="__figure-caption_4">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/unsatisfiable.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 4" src="../../../../../assets/blogs/june_2025/boolean_package/unsatisfiable.png" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 4.</span> An unsatisfiable situation where <code>Gamma-0.5</code> is already installed in the system as it is a dependency of the already installed package <code>Delta-1.6</code>. This leads to the incompatible selection as described in <a href="#__figure-caption_3">Figure 3</a> as the variable for <code>Gamma-0.6</code> will always be set to <code>True</code>.</p>
+</figcaption>
+</figure>
+<p>As visualized in <a href="#__figure-caption_4">Figure 4</a>, let us assume that some package named <code>Delta-1.6</code>, which depends on <code>Gamma-0.5</code>, is already installed in our system, and we now need to install <code>Alpha-2.0</code>. Since <code>Delta-1.6</code> depends on <code>Gamma-0.5</code> , <span class="arithmatex">\(Gamma0.5\)</span> will always be <code>True</code>. This will lead to the same situation as shown in <a href="#__figure-caption_3">Figure 3</a>, making this instance of the problem unsatisfiable. In such cases, the package manager would ask the user to upgrade <code>Delta-1.6</code> to <code>Delta-1.7</code>. If users upgrade <code>Delta</code>, then <code>Gamma-0.5</code> would be upgraded to <code>Gamma-0.6</code>. This will make the problem satisfiable with the solution same as the 1st compatible selection shown in <a href="#__figure-caption_2">Figure 2</a>.</p>
+<p>When the <code>conda</code> package manager finds such feasible options, it would prompt the user for such an upgrade, as shown in <a href="#__figure-caption_5">Figure 5</a>. </p>
+<figure class="justify_align" id="__figure-caption_5">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/upgrade.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 5" src="../../../../../assets/blogs/june_2025/boolean_package/upgrade.png" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 5.</span> A representative example where <code>conda</code> package manager prompts user if it is fine to upgrade <code>delta</code> and <code>gamma</code> in order to install <code>alpha-2.0</code>.</p>
+</figcaption>
+</figure>
+<p>When there is no option for upgrading/downgrading in an unsatisfiable situation, package manager would raise error stating that the requirements are not satisfiable. Check <a href="#__figure-caption_6">Figure 6</a> for an example of such a situation with the <code>conda package manager</code>.</p>
+<figure class="justify_align" id="__figure-caption_6">
+<p><a class="glightbox" href="../../../../../assets/blogs/june_2025/boolean_package/unsat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Figure 6" src="../../../../../assets/blogs/june_2025/boolean_package/unsat.png" /></a></p>
+<figcaption>
+<p><span class="caption-prefix">Figure 6.</span><code>Conda</code> raising an unsatifiable error as it finds an unsatisfiable conditions. Th user tries to install <code>numpy-1.15.4</code> which depends on <code>python</code> with versions <code>&gt;=2.7,&lt;2.8.0a0</code>, <code>&gt;=3.6,&lt;3.7.0a0</code>, and <code>python &gt;=3.7,&lt;3.8.0a0</code>. However, another dependency of <code>numpy</code> is <code>pin-1</code> depends on <code>python-3.10</code> which conflicts with the previously reported requirements of <code>python</code>.</p>
+</figcaption>
+</figure>
+<h2 id="regarding-solving-the-sat-problem">Regarding solving the SAT problem</h2>
+<p>Before discussing solving the SAT problem, first let us discuss verifying if a given solution satisfies the Boolean formula. In the previous section, we verified multiple assignments of boolean variables to check if they satisfy the boolean formula. It can be observed that the number of computations needed to verify the assignment is proportional to the number of operators in it, which is similar to the number of literals in the formula. (NOTE: A literal is some boolean variable <span class="arithmatex">\(x_i\)</span> or its negation <span class="arithmatex">\(\neg x_i\)</span>). </p>
+<p>If we express the time taken to verify the boolean formula with <span class="arithmatex">\(n\)</span> literals as the number of computation performed, then the time to verify a SAT formula would be some linear function of <span class="arithmatex">\(n\)</span>, which would be a polynomial (as we need to iterate though the operands and replace it with result of the operands until we get the final result). We can think of a sequence of operations that can be performed in polynomial time as a fast algorithm (let us refer to the sequence of operations as an algorithm). Such problems are considered to be a part of a class of problems named <code>p</code>. So, verification of a Boolean formula given an assignment comes under the <code>p</code> class of problems.</p>
+<p>Now, let us discuss how to find an assignment of the variables. The most naive way would be to try all possible assignments. But this would be exponential in terms of the number of variables. The larger the number of variables, the longer it takes to find an assignment. But, do we have an algorithm that can find an assignment in polynomial time instead of exponential time? Interestingly, the current experience of mathematicians is that there is no such algorithm. However, there exist implementations of heuristic SAT solvers that can find satisfying assignments in a reasonable time, and tons of research is done in developing such algorithms. Discussion of those algorithms is out of the scope of this blog due to my limited knowledge in that area. But, the good news is we can use those implementations to solve our problem of selecting the appropriate dependencies. In addition to this, the implementations also provide recommendations to make the problem satisfiable if it is not, as seen in the situation described in <a href="#__figure-caption_4">Figure 4</a>. For example, <code>conda</code> uses some implementations like <code>PicoSAT</code> and <code>libsolv</code>. If you are comfortable in Python, you may check PySAT, which provides an implementation of SAT solvers in Python.</p>
+<h2 id="how-difficult-is-the-sat-problem">How difficult is the SAT problem?</h2>
+<details class="info" open="open">
+<summary>What is reduction?</summary>
+<p>If we can transform one problem <code>A</code> into another problem <code>B</code> in polynomial time, we say that problem <code>A</code> is reduced to problem <code>B</code>. If we find a polynomial time algorithm for <code>B</code>, we will have a polynomial time algorithm for <code>A</code> too by first transforming <code>A</code> to <code>B</code> and then solving for <code>B</code>. For example, our problem of finding the correct selection of packages has been transformed into a SAT problem in polynomial time. We just had to write boolean formulas for each condition, and doing so is equivalent to doing tasks with a number of operations as some constant times the number of conditions, which would be linear in the number of conditions.</p>
+</details>
+<p>As of now, we don’t have a polynomial time algorithm for solving the SAT problem, but we saw that given a solution, the verification can be done in polynomial time, and such problems with polynomial time verification are said to be in the class named <code>np</code>. An interesting fact about the SAT problem is that any other problem in <code>np</code> can be reduced to SAT in polynomial time. One such example is our problem of selecting appropriate packages that satisfy all dependencies. That means if we have a polynomial time algorithm to solve SAT, then we have a polynomial time algorithm for all other problems in <code>np</code>. Mathematicians <strong><em>believe</em></strong> that there is no such algorithm, and nobody has been able to <strong><em>prove</em></strong> this yet. But if one can find such an algorithm, then not only will installing a package become fast, but it will also lead to crazy consequences. Check <a href="https://www.youtube.com/watch?v=6OPsH8PK7xM" target="_blank">this video</a> by <a href="https://www.youtube.com/@PolylogCS" target="_blank">Polylog</a> for more information on this.</p>
+<h2 id="game-time"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6h10a6 6 0 0 1 6 6 6 6 0 0 1-6 6c-1.78 0-3.37-.77-4.47-2h-1.06c-1.1 1.23-2.69 2-4.47 2a6 6 0 0 1-6-6 6 6 0 0 1 6-6M6 9v2H4v2h2v2h2v-2h2v-2H8V9zm9.5 3a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5m3-3a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5A1.5 1.5 0 0 0 18.5 9"/></svg></span> Game time !!!</h2>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>The game here is provided as a supplementary for better understanding and hands-on example. The game was developed with the help of AI tools (<a href="https://github.com/features/copilot" target="_blank">GitHub Copilot</a>, <a href="https://replit.com/" target="_blank">Replit</a>, <a href="https://cursor.so/" target="_blank">Cursor</a>).</p>
+</details>
+<p>Want to try your hands at solving the SAT problem for dependency resolution? Check the following game for more hands-on examples. Check how boolean logic can help in finding constraints.</p>
+<p>Game: <a href="https://anp-scp.github.io/package_resolving_game/" target="_blank">Package Dependency Resolution Game</a></p>
+<h2 id="other-applications-of-boolean-propositional-logic">Other Applications of Boolean Propositional Logic</h2>
+<p>There are many other applications of boolean formulas where constraints can be expressed as boolean formula. We list a couple of them below.</p>
+<h3 id="access-control-policies">Access Control Policies</h3>
+<p>Can be used to define and enforce access rules in computer systems based on roles, permissions, and environmental conditions.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>
+<p>Grant access if the user is an admin or has read permission:<br />
+  $ (\text{Admin} \lor \text{ReadPermission}) \implies \text{Access}$</p>
+</li>
+<li>
+<p>Deny access during lockdown:<br />
+  $ \text{Lockdown} \implies \neg \text{ Access }$</p>
+</li>
+<li>
+<p>A guest and admin role cannot be assigned together:<br />
+  $ \neg (\text{ Guest } \land \text{ Admin })$</p>
+</li>
+</ul>
+<h3 id="course-prerequisites-and-scheduling">Course Prerequisites and Scheduling</h3>
+<p>Can be used in academic planning tools to ensure students meet course prerequisites and avoid scheduling conflicts.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>
+<p>Taking CS201 requires completing CS101:<br />
+  $ \text{CS201} \implies \text{CS101}$</p>
+</li>
+<li>
+<p>Prevent scheduling overlap between Bio101 and Chem101:<br />
+  $ \neg  (\text{Bio101} \land \text{Chem101})$</p>
+</li>
+<li>
+<p>Choose only one from three electives:<br />
+  $ (\text{E1} \lor \text{E2} \lor \text{E3}) \land \neg (\text{E1} \land \text{E2}) \land \neg (\text{E1} \land \text{E3}) \land \neg (\text{E2} \land \text{E3})$</p>
+</li>
+</ul>
+<h3 id="resource-management-by-operating-systems">Resource Management by Operating Systems</h3>
+<p>Can be used to manage allocation of resources like CPU, memory, and Input/Output (I/O) devices in a computer system without conflicts or deadlocks.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>
+<p>A process can run only if it has both CPU and memory available:<br />
+  $ (\text{HasCPU} \land \text{HasMemory}) \implies \text{CanRun}$</p>
+</li>
+<li>
+<p>Two processes cannot write to the same file simultaneously:<br />
+  $ \neg (\text{Write(P1, FileX)} \land \text{Write(P2, FileX)})$
+  Here, <span class="arithmatex">\(P1\)</span> and <span class="arithmatex">\(P2\)</span> are two processes or software running in a computer system, and <span class="arithmatex">\(FileX\)</span> is a file.</p>
+</li>
+<li>
+<p>Deadlock detection rules:</p>
+<p>Imagine a system with:</p>
+<ul>
+<li>Two processes: P1 and P2</li>
+<li>Two resources: R1 and R2</li>
+</ul>
+<p>Scenario:</p>
+<ul>
+<li>P1 holds R1 and is waiting for R2. P1 will never reach to completion if it doesn't get R2.</li>
+<li>P2 holds R2 and is waiting for R1. P2 will never reach to completion if it doesn't get R1.</li>
+</ul>
+<p>This creates a circular wait, which is one of the conditions for deadlock. Let’s define Boolean variables:</p>
+<ul>
+<li>Hold(Pi, Rj) would be True if Pi holds Rj for some usage</li>
+<li>Wait(Pi, Rj) would be True if Pi is waiting for Rj to be released by some other process</li>
+</ul>
+</li>
+</ul>
+<p>Now the following formula can be used to detect potential deadlocks:
+  $ (\text{Hold}(P1, R1) \land \text{Wait}(P1, R2) \land \text{Hold}(P2, R2) \land \text{Wait}(P2, R1) ) \implies \text{Deadlock}$</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://borretti.me/article/dependency-resolution-made-simple" target="_blank">Dependency Resolution Made Simple</a></li>
+<li><a href="https://ochagavia.nl/blog/the-magic-of-dependency-resolution/" target="_blank">The Magic of Dependency Resolution</a></li>
+<li><a href="https://research.swtch.com/version-sat" target="_blank">Version SAT</a></li>
+<li><a href="https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-install.html#deep-dive-install" target="_blank">Deep Dive into Conda Install</a></li>
+<li><a href="https://docs.conda.io/projects/conda/en/4.13.x/dev-guide/deep-dive-solvers.html" target="_blank">Deep dive: solvers</a></li>
+<li><a href="https://conda.github.io/conda-libmamba-solver/user-guide/libmamba-vs-classic/" target="_blank">LibMamba vs Classic</a></li>
+<li><a href="https://www.youtube.com/watch?v=6OPsH8PK7xM0" target="_blank">What P vs NP is actually about</a></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+    
+    
+      Made with
+      <a
+        href="https://squidfunk.github.io/mkdocs-material/"
+        target="_blank" rel="noopener"
+      >
+        Material for MkDocs
+      </a>
+      <br>
+      "News" design inspired from
+      <a
+        href="https://www.neeldhara.com/"
+        target="_blank" rel="noopener"
+      >
+      neeldhara.com
+      </a>
+      <br>
+      <a href="assets/logo.png" target="_blank", rel="noopener">Logo</a> 
+      generated by 
+      <a
+        href="https://copilot.microsoft.com/"
+        target="_blank" rel="noopener"
+      >
+        Microsoft Copilot
+      </a>
+      and edited with
+      <a
+        href="https://www.remove.bg/"
+        target="_blank" rel="noopener"
+      >
+        remove.bg
+      </a>
+    
+  </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
