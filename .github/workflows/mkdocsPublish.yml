@@ -21,6 +21,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: ls -la $GITHUB_WORKSPACE/anp-scp.github.io/
+      - run: ls -la $GITHUB_WORKSPACE
       - run: pip install mkdocs-material==9.5.36
       - run: pip install mkdocs-glightbox==0.4.0 
       - run: mkdocs gh-deploy --force
