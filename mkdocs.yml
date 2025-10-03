@@ -1,6 +1,6 @@
 site_name: Anupam Sharma
 dev_addr: 127.0.0.1:8080
-site_url: https://anp-scp.github.io/
+site_url: https://anupamsharma.in/
 
 theme:
   name: material
