@@ -39,6 +39,16 @@ His research interests include deep learning, representation learning, meta-lear
 
 ---
 
+# Research Overview
+
+Here is a short video giving a brief overview of my current research work.
+
+<div style="text-align: center;" markdown>
+  <iframe src="https://workdrive.zohopublic.in/embed/funmma7e54c71d73a4617bc68372215128850?toolbar=false&appearance=dark&themecolor=green" scrolling="no" frameborder="0" allowfullscreen=true width="800" height="450" title="Research Overview" style="text-align:center;"></iframe>
+</div>
+
+---
+
 # News
 
 <!-- Copy recent 5 news from news.md -->
