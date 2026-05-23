@@ -28,6 +28,7 @@ His research interests include deep learning, representation learning, meta-lear
 
 <br>
 
+[:simple-dblp:](https://dblp.org/pid/152/0096-1){:target="_blank" .md-button .extra_space_in_phones } 
 [:fontawesome-brands-google-scholar:](https://scholar.google.com/citations?user=ZOYSYJEAAAAJ&hl=en){:target="_blank" .md-button .extra_space_in_phones } 
 [:simple-orcid:](https://orcid.org/0000-0002-3443-4646){:target="_blank" .md-button .extra_space_in_phones } 
 [:fontawesome-brands-linkedin:](https://www.linkedin.com/in/anupam-sh/){:target="_blank" .md-button .extra_space_in_phones } 
